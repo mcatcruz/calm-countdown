@@ -3,6 +3,7 @@
 // Note: This endpoint is server-side only.
 // TO-DO: Attach this API to a database.
 // TO-DO: What info will be in req.body? Figure out what we are checking for.
+// TO-DO: Implement react-hook-form
 
 export default function handler(req, res) {
 
