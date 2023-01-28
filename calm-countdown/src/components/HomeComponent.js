@@ -9,7 +9,7 @@ function HomeComponent(){
             <div className={styles.container}>
                 <h1 className={styles.title}>Meet Calm</h1>
                 <h3 className={styles.subtitle}>Engage your senses. Return to the present.</h3>
-                <button>Start</button>
+                <button className={styles.startbtn}>Start</button>
             </div>
             
         </>
