@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google' /* Change font  */
 import styles from '@/styles/Home.module.css' /* Make changes to Home page appearance using Home.module.css  */
 
 import HomeComponent from '../components/HomeComponent'
+import FormHub from '@/components/FormHub'
 
 const inter = Inter({ subsets: ['latin'] })  // Additional font styling
 
@@ -18,7 +19,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <HomeComponent />
-        
+        <FormHub />
       </main>
     </>
   )

@@ -1,11 +1,18 @@
 import React from "react";
-import propTypes from "prop-types";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/HomeComponent.module.css";
 import { Fade } from "react-awesome-reveal";
+import { useState } from 'react';
+import SeeForm from './SeeForm';
 
 // FormHub holds the initial state of all the forms through useState.
-const FormHub = () => {
-    const[formStep, setFormStep] = React.useState(0);
-    const [] = React.useState("")
-    const [] = React.useState("");
+const FormHub = (props) => {
+
+    return(
+            <>
+                <SeeForm name="Five Things You See"/>
+            </>
+
+    )
 }
+
+export default FormHub;
