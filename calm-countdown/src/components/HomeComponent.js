@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from '../styles/HomeComponent.module.css'
 import FormHub from './FormHub';
-import SeeForm from './SeeForm';
 import { useState } from 'react'; 
-import { render } from 'react-dom';
 
 // This is the Home Page UI. 
-
+// 2/13 TODO: Start button --> renderFormHub AND hide everything from homepage (create LandingPage component?)
 function HomeComponent(){
 
     const [showFormHub, setFormHub] = useState(false);
@@ -20,16 +18,19 @@ function HomeComponent(){
     return (
         <>  
             <div className={styles.container}>
-                <h1 className={styles.title}>Meet Calm</h1>
-                <h3 className={styles.subtitle}>Engage your senses. Return to the present.</h3>
-                <button className={styles.startbtn} onClick={renderFormHub}>Start</button>
-
-                {showFormHub ? <FormHub /> : console.log('nope')}
+                {showFormHub ? <FormHub />: 
+                    <> 
+                        <h1 className={styles.title}>Meet Calm</h1>
+                        <h3 className={styles.subtitle}>Engage your senses. Return to the present.</h3>
+                        <button className={styles.startbtn} onClick={renderFormHub}>Start</button>
+                    </>
+                }
                 
             </div>
             
         </>
     )
+
 }
 
 export default HomeComponent;
