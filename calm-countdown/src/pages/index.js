@@ -19,7 +19,6 @@ export default function Home() {
 
       <main className={styles.main}>
         <HomeComponent />
-        <FormHub />
       </main>
     </>
   )

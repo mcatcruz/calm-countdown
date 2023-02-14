@@ -13,7 +13,8 @@ function HomeComponent(){
 
     function renderFormHub(event) {
         setFormHub(true);
-        console.log(event)
+        console.log(event);
+
     }
 
     return (
@@ -21,7 +22,7 @@ function HomeComponent(){
             <div className={styles.container}>
                 <h1 className={styles.title}>Meet Calm</h1>
                 <h3 className={styles.subtitle}>Engage your senses. Return to the present.</h3>
-                <button className={styles.startbtn} onClick={renderFormHub}> Start</button>
+                <button className={styles.startbtn} onClick={renderFormHub}>Start</button>
 
                 {showFormHub ? <FormHub /> : console.log('nope')}
                 

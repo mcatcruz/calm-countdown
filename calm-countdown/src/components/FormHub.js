@@ -5,11 +5,11 @@ import { useState } from 'react';
 import SeeForm from './SeeForm';
 
 // FormHub holds the initial state of all the forms through useState.
-const FormHub = (props) => {
+const FormHub = ({}) => {
 
-    return(
+    return (
             <>
-                <SeeForm name="Five Things You See"/>
+                <SeeForm formTitle="Five Things You See"/>
             </>
 
     )
