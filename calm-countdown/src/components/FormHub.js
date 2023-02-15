@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import styles from "../styles/HomeComponent.module.css";
-import { useState } from 'react';
 import SeeForm from './SeeForm';
 import TouchForm from './TouchForm';
+
 // import HearForm from './HearForm';
 // import SmellForm from './SmellForm';
 // import TasteForm from './TasteForm';
@@ -11,7 +11,9 @@ import TouchForm from './TouchForm';
 // This will handle most of the forms' logic.
 
 // 2/14 TODO: ADD A 'BACK' BUTTON
+// 2/14 TODO: RESTART BUTTON GOES TO HOMECOMPONENT
 // 2/14 TODO: GETFORM() IS RENDERING A NUMBER -- HOW TO DELETE THIS?
+
 const FormHub = ({}) => {
     const [form, setForm] = useState(0);
 
@@ -27,23 +29,55 @@ const FormHub = ({}) => {
     const getForm = () => {
 
         const formTypesByNumericalOrder = {
-            0: <SeeForm formData={formInput} setFormData={setFormInput} />,
-            1: <TouchForm formData={formInput} setFormData={setFormInput}/>,
-            // 2: <HearForm formData={formInput} setFormData={setFormInput}/>,
-            // 3: <SmellForm formData={formInput} setFormData={setFormInput} />,
-            // 4: <TasteForm formData={formInput} setFormData={setFormInput} />,
+            0: <SeeForm formInput={formInput} handleFormInputChange={handleFormInputChange} />,
+            1: <TouchForm formInput={formInput} handleFormInputChange={handleFormInputChange}/>,
+            // 2: <HearForm  formInput={formInput} handleFormInputChange={setForm}/>,
+            // 3: <SmellForm  formInput={formInput} handleFormInputChange={setForm} />,
+            // 4: <TasteForm  formInput={formInput} handleFormInputChange={setForm} />,
         }
 
-        return Object.keys(formTypesByNumericalOrder)[form];
+        return formTypesByNumericalOrder[form];
     }
 
-    function handleNext (event) {
+    const handleNext = (event) => {
         if (form >= 4) {
             setForm(0);
         } else {
             setForm(form + 1);
             console.log('hi')
         }
+    }
+
+    const handleFormInputChange = (event) => {
+        const target = event.target
+        if (target.name == "first") {
+            setFormInput({
+                ...formInput,
+                firstItem: target.value
+            })
+        } else if (target.name == "second") {
+            setFormInput({
+                ...formInput,
+                secondItem: target.value
+            })
+        } else if (target.name == "third") {
+            setFormInput({
+                ...formInput,
+                thirdItem: target.value
+            })
+        } else if (target.name == "fourth") {
+            setFormInput({
+                ...formInput,
+                fourthItem: target.value
+            })
+        } else if (target.name == "fifth") {
+            setFormInput({
+                ...formInput,
+                fifthItem: target.value
+            })
+        }
+
+
     }
 
     return (

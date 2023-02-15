@@ -4,7 +4,7 @@ import FormHub from './FormHub';
 import { useState } from 'react'; 
 
 // This is the Home Page UI. 
-// 2/13 TODO: Start button --> renderFormHub AND hide everything from homepage (create LandingPage component?)
+
 function HomeComponent(){
 
     const [showFormHub, setFormHub] = useState(false);
