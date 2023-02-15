@@ -1,21 +1,7 @@
 import React from 'react';
 import styles from '../styles/HomeComponent.module.css'
-import { useState } from 'react'; 
-import HomeComponent from './HomeComponent';
-
-
-// 2/14  TODO: RESTART BUTTON GOES TO HOMECOMPONENT (SEE FORMHUB COMPONENT)
-
 
 function End(){
-
-    // const [showHome, setHome] = useState(false);
-
-    // function renderHome(event) {
-    //     setHome(true);
-    //     console.log(event);
-
-    // }
 
     return (
         <>  
