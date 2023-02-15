@@ -2,17 +2,15 @@ import React, {useState, useRef} from "react";
 import styles from "../styles/HomeComponent.module.css";
 import SeeForm from './SeeForm';
 import TouchForm from './TouchForm';
-
-// import HearForm from './HearForm';
-// import SmellForm from './SmellForm';
-// import TasteForm from './TasteForm';
+import HearForm from './HearForm';
+import SmellForm from './SmellForm';
+import TasteForm from './TasteForm';
 
 // FormHub holds the initial state of all the forms through useState.
 // This will handle most of the forms' logic.
 
 // 2/14 TODO: ADD A 'BACK' BUTTON
-// 2/14 TODO: RESTART BUTTON GOES TO HOMECOMPONENT
-// 2/14 TODO: GETFORM() IS RENDERING A NUMBER -- HOW TO DELETE THIS?
+// 2/14 TODO: RESTART BUTTON GOES TO HOMECOMPONENT (SEE END COMPONENT)
 
 const FormHub = ({}) => {
     const [form, setForm] = useState(0);
@@ -31,20 +29,19 @@ const FormHub = ({}) => {
         const formTypesByNumericalOrder = {
             0: <SeeForm formInput={formInput} handleFormInputChange={handleFormInputChange} />,
             1: <TouchForm formInput={formInput} handleFormInputChange={handleFormInputChange}/>,
-            // 2: <HearForm  formInput={formInput} handleFormInputChange={setForm}/>,
-            // 3: <SmellForm  formInput={formInput} handleFormInputChange={setForm} />,
-            // 4: <TasteForm  formInput={formInput} handleFormInputChange={setForm} />,
+            2: <HearForm  formInput={formInput} handleFormInputChange={handleFormInputChange}/>,
+            3: <SmellForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
+            4: <TasteForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
         }
 
         return formTypesByNumericalOrder[form];
     }
 
     const handleNext = (event) => {
-        if (form >= 4) {
+        if (form >= 5) {
             setForm(0);
         } else {
             setForm(form + 1);
-            console.log('hi')
         }
     }
 
@@ -76,15 +73,13 @@ const FormHub = ({}) => {
                 fifthItem: target.value
             })
         }
-
-
     }
 
     return (
             <div className={styles.formcontainer}>
                 {getForm()}
                 
-                <button className={styles.nextbtn} onClick={handleNext}> {form === 4 ? "Restart" : "Next" }
+                <button className={styles.nextbtn} onClick={handleNext}> {form >= 5 ? "Restart" : "Next" }
                 
                 </button>
             </div>

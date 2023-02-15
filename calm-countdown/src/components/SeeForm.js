@@ -1,17 +1,11 @@
 import React from "react";
 import styles from "../styles/HomeComponent.module.css";
-import FormHub from "./FormHub";
 
-
-
-// 2/14 TODO:  FIGURE OUT WHY formInput IS UNDEFINED
-
-const SeeForm = ({ formInput, handleFormInputChange }) => {
-    console.log(formInput)
+const SeeForm = ({ handleFormInputChange }) => {
 
     return (
         <>
-            <h1 className={styles.title}>Five Things You See</h1>
+            <h1 className={styles.title}>Five Sights You See</h1>
             <form>
             
                 <fieldset className={styles.fieldset}>
