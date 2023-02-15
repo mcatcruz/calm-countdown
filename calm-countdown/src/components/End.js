@@ -7,27 +7,21 @@ import HomeComponent from './HomeComponent';
 // 2/14  TODO: RESTART BUTTON GOES TO HOMECOMPONENT (SEE FORMHUB COMPONENT)
 
 
-function EndComponent(){
+function End(){
 
-    const [showHome, setHome] = useState(false);
+    // const [showHome, setHome] = useState(false);
 
-    function renderHome(event) {
-        setHome(true);
-        console.log(event);
+    // function renderHome(event) {
+    //     setHome(true);
+    //     console.log(event);
 
-    }
+    // }
 
     return (
         <>  
-            <div className={styles.container}>
-                {setHome ? <HomeComponent /> : 
-                    <> 
-                        <h1 className={styles.title}>Fin</h1>
-                        <h3 className={styles.subtitle}>Take a deep breath. Enjoy your day.</h3>
-                        <button className={styles.startbtn} onClick={renderHome}></button>
-                    </>
-                }
-                
+            <div>
+                    <h1 className={styles.title}>Fin</h1>
+                    <h3 className={styles.subtitle}>Take a deep breath. Enjoy your day.</h3>
             </div>
             
         </>
@@ -35,4 +29,4 @@ function EndComponent(){
 
 }
 
-export default EndComponent;
+export default End;

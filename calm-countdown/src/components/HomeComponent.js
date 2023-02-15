@@ -6,26 +6,11 @@ import { useState } from 'react';
 // This is the Home Page UI. 
 
 function HomeComponent(){
-
-    const [showFormHub, setFormHub] = useState(false);
-
-    function renderFormHub(event) {
-        setFormHub(true);
-        console.log(event);
-
-    }
-
     return (
         <>  
-            <div className={styles.container}>
-                {showFormHub ? <FormHub />: 
-                    <> 
+            <div>
                         <h1 className={styles.title}>Meet Calm</h1>
-                        <h3 className={styles.subtitle}>Engage your senses. Return to the present.</h3>
-                        <button className={styles.startbtn} onClick={renderFormHub}>Start</button>
-                    </>
-                }
-                
+                        <h3 className={styles.subtitle}>Engage your senses. Return to the present.</h3>  
             </div>
             
         </>
