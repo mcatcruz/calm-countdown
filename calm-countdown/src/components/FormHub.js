@@ -17,36 +17,48 @@ import HomeComponent from "./HomeComponent";
 const FormHub = ({}) => {
     const [component, setComponent] = useState(0);
 
-    const [formInput, setFormInput] = useState({
-        firstItem: '',
-        secondItem: '',
-        thirdItem: '',
-        fourthItem: '',
-        fifthItem: '',
+    const [seeFormInput, setSeeFormInput] = useState({
+        firstSeeItem: '',
+        secondSeeItem: '',
+        thirdSeeItem: '',
+        fourthSeeItem: '',
+        fifthSeeItem: '',
+    })
+
+    const [touchFormInput, setTouchFormInput] = useState({
+        firstTouchItem: '',
+        secondTouchItem: '',
+        thirdTouchItem: '',
+        fourthTouchItem: '',
+    })
+
+    const [hearFormInput, setHearFormInput] = useState({
+        firstSound: '',
+        secoundSound: '',
+        thirdSound: '',
+    })
+
+    const [smellFormInput, setSmellFormInput] = useState({
+        firstAroma: '',
+        secondAroma: '',
+    })
+
+    const [tasteFormInput, setTasteFormInput] = useState({
+        firstFlavor: '',
     })
 
     const [blankAlert, setBlankAlert] = useState('');
-
-    const handleBlankItem = () => {
-        for (const input of Object.values(formInput)) {
-            if (input.trim().length > 0) {
-                setBlankAlert('');
-            } else {
-                setBlankAlert('Field(s) empty. Kindly fix.')
-            }
-        }
-    }
 
     // renderComponent will render a different component based on form value.
     const renderComponent = () => {
 
         const componentByNumericalOrder = {
             0: <HomeComponent />,
-            1: <SeeForm formInput={formInput} handleFormInputChange={handleFormInputChange} />,
-            2: <TouchForm formInput={formInput} handleFormInputChange={handleFormInputChange} />,
-            3: <HearForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
-            4: <SmellForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
-            5: <TasteForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
+            1: <SeeForm seeFormInput={seeFormInput} handleSeeFormInputChange={handleSeeFormInputChange} />,
+            2: <TouchForm touchFormInput={touchFormInput} handleTouchFormInputChange={handleTouchFormInputChange} />,
+            3: <HearForm  hearFormInput={hearFormInput} handleHearFormInputChange={handleHearFormInputChange} />,
+            4: <SmellForm  smellFormInput={smellFormInput} handleSmellFormInputChange={handleSmellFormInputChange} />,
+            5: <TasteForm  tasteFormInput={tasteFormInput} handleTasteFormInputChange={handleTasteFormInputChange} />,
             6: <End />
         }
 
@@ -55,44 +67,128 @@ const FormHub = ({}) => {
 
     // handleButton will increment setComponent by one; this is triggered when Next button is clicked.
     const handleButton= (event) => {
+        // Check that formInput has zero blanks before incrementing component.
+        if (component > 0 || component < 6) {
+            // in here is checking if any input field that is related to the current form is blank.
+            // if any of the input fields is blank, then add an alert and return early.
+            for (const input of Object.values(formInput)) {
+                if (input.trim().length === 0) {
+                    setBlankAlert('Field(s) empty. Kindly fix.');
+                    // return;
+                } 
+            }
+
+            // if all input fields are valid, then remove alert.
+        }
+        
         if (component >= 6) {
             setComponent(0);
         } else {
             setComponent(component + 1);
         }
-        if (component !== 0 || component === 6) {
-            handleBlankItem();
-        }
-        
     }
 
-    // handledFormInputChange updates the forms with user input
-    const handleFormInputChange = (event) => {
+    //Updates the forms with user input
+    const handleSeeFormInputChange = (event) => {
         const target = event.target;
-        if (target.name == "first") {
-            setFormInput({
-                ...formInput,
-                firstItem: target.value
+
+        if (target.name == "first_seen_item") {
+            setSeeFormInput({
+                ...seeFormInput,
+                firstSeeItem: target.value
             })
-        } else if (target.name == "second") {
-            setFormInput({
-                ...formInput,
-                secondItem: target.value
+        } else if (target.name == "second_seen_item") {
+            setSeeFormInput({
+                ...seeFormInput,
+                secondSeeItem: target.value
             })
-        } else if (target.name == "third") {
-            setFormInput({
-                ...formInput,
-                thirdItem: target.value
+        } else if (target.name == "third_seen_item") {
+            setSeeFormInput({
+                ...seeFormInput,
+                thirdSeeItem: target.value
             })
-        } else if (target.name == "fourth") {
-            setFormInput({
-                ...formInput,
-                fourthItem: target.value
+        } else if (target.name == "fourth_seen_item") {
+            setSeeFormInput({
+                ...seeFormInput,
+                fourthSeeItem: target.value
             })
-        } else if (target.name == "fifth") {
-            setFormInput({
-                ...formInput,
-                fifthItem: target.value
+        } else if (target.name == "fifth_seen_item") {
+            setSeeFormInput({
+                ...seeFormInput,
+                fifthSeeItem: target.value
+            })
+        }
+    }
+
+    const handleTouchFormInputChange = (event) => {
+        const target = event.target;
+
+        if (target.name == "first_touch_item") {
+            setTouchFormInput({
+                ...touchFormInput,
+                firstTouchItem: target.value
+            })
+        } else if (target.name == "second_touch_item") {
+            setTouchFormInput({
+                ...touchFormInput,
+                secondTouchItem: target.value
+            })
+        } else if (target.name == "third_touch_item") {
+            setTouchFormInput({
+                ...touchFormInput,
+                thirdTouchItem: target.value
+            })
+        } else if (target.name == "fourth_touch_item") {
+            setTouchFormInput({
+                ...touchFormInput,
+                fourthTouchItem: target.value
+            })
+        } 
+    }
+
+    const handleHearFormInputChange = (event) => {
+        const target = event.target
+
+        if (target.name == "first_sound") {
+            setHearFormInput({
+                ...hearFormInput,
+                firstSound: target.value
+            })
+        } else if (target.name == "second_sound") {
+            setHearFormInput({
+                ...hearFormInput,
+                secondSound: target.value
+            })
+        } else if (target.name == "third_sound") {
+            setHearFormInput({
+                ...hearFormInput,
+                thirdSound: target.value
+            })
+        }
+    }
+
+    const handleSmellFormInputChange = (event) => {
+        const target = event.target
+
+        if (target.name == "first_aroma") {
+            setSmellFormInput({
+                ...smellFormInput,
+                firstAroma: target.value
+            })
+        } else if (target.name == "second_aroma") {
+            setSmellFormInput({
+                ...smellFormInput,
+                secondAroma: target.value
+            })
+        }
+    }
+
+    const handleTasteFormInputChange = (event) => {
+        const target = event.target
+        
+        if (target.name == 'first_flavor') {
+            setTasteFormInput({
+                firstFlavor: target.value
             })
         }
     }
@@ -101,7 +197,7 @@ const FormHub = ({}) => {
             <div className={styles.container}>
                 {renderComponent()}
                 <span className={styles.span}>{blankAlert}</span>
-                <button className={styles.nextbtn} onClick={handleButton} disabled={blankAlert}> 
+                <button className={styles.nextbtn} onClick={handleButton}> 
                     { component === 0 ? "Start" 
                     : component >= 6 ? "Restart" 
                     : "Next" }

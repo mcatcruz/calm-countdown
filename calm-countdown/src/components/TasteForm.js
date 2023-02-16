@@ -12,7 +12,7 @@ const TasteForm = ({handleFormInputChange}) => {
                 <fieldset className={styles.fieldset}>
                 
                     <label htmlFor="first_flavor">
-                        <input name="first" className={styles.input} type="text" onChange={handleFormInputChange}  placeholder="Mint"></input>
+                        <input name="first_flavor" className={styles.input} type="text" onChange={handleTasteFormInputChange}  placeholder="Mint"></input>
                     </label>
                     
                 </fieldset>

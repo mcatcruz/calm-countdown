@@ -12,16 +12,16 @@ const TouchForm = ({handleFormInputChange}) => {
                 <fieldset className={styles.fieldset}>
                 
                     <label htmlFor="first_touched_item">
-                        <input name="first" className={styles.input} type="text" onChange={handleFormInputChange}  placeholder="Headphones"></input>
+                        <input name="first_touched_item" className={styles.input} type="text" onChange={handleTouchFormInputChange}  placeholder="Headphones"></input>
                     </label>
                     <label htmlFor="second_touched_item">
-                        <input name="second" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Chair"></input>
+                        <input name="second_touched_item" className={styles.input}  type="text" onChange={handleTouchFormInputChange} placeholder="Chair"></input>
                     </label>
                     <label htmlFor="third_touched_item">
-                        <input name="third" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Keyboard"></input>
+                        <input name="third_touched_item" className={styles.input}  type="text" onChange={handleTouchFormInputChange} placeholder="Keyboard"></input>
                     </label>
                     <label htmlFor="fourth_touched_item">
-                        <input name="fourth" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Ground"></input>
+                        <input name="fourth_touched_item" className={styles.input}  type="text" onChange={handleTouchFormInputChange} placeholder="Ground"></input>
                     </label>
                     
                 </fieldset>

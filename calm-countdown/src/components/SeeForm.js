@@ -11,20 +11,20 @@ const SeeForm = ({ handleFormInputChange }) => {
                 <fieldset className={styles.fieldset}>
                 
                     <label htmlFor="first_seen_item">
-                        <input name="first" className={styles.input} type="text" onChange={handleFormInputChange} placeholder="Desk">
+                        <input name="first_seen_item" className={styles.input} type="text" onChange={handleSeeFormInputChange} placeholder="Desk">
                         </input>
                     </label>
                     <label htmlFor="second_seen_item">
-                        <input name="second" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Keyboard"></input>
+                        <input name="second_seen_item" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Keyboard"></input>
                     </label>
                     <label htmlFor="third_seen_item">
-                        <input name="third" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Phone"></input>
+                        <input name="third_seen_item" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Phone"></input>
                     </label>
                     <label htmlFor="fourth_seen_item">
-                        <input name="fourth" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Window"></input>
+                        <input name="fourth_seen_item" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Window"></input>
                     </label>
                     <label htmlFor="fifth_seen_item">
-                        <input name="fifth" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Coffee Mug"></input>
+                        <input name="fifth_seen_item" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Coffee Mug"></input>
                     </label>
                     
                 </fieldset>

@@ -11,13 +11,13 @@ const HearForm = ({ handleFormInputChange }) => {
                 <fieldset className={styles.fieldset}>
                 
                     <label htmlFor="first_sound">
-                        <input name="first" className={styles.input} type="text" onChange={handleFormInputChange}  placeholder="Keyboard Clacking"></input>
+                        <input name="first_sound" className={styles.input} type="text" onChange={handleFormInputChange}  placeholder="Keyboard Clacking"></input>
                     </label>
                     <label htmlFor="second_sound">
-                        <input name="second" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Mouse Clicks"></input>
+                        <input name="second_sound" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Mouse Clicks"></input>
                     </label>
                     <label htmlFor="third_sound">
-                        <input name="third" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Lofi Beats"></input>
+                        <input name="third_sound" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Lofi Beats"></input>
                     </label>
                     
                 </fieldset>

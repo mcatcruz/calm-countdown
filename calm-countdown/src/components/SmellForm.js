@@ -11,10 +11,10 @@ const SmellForm = ({ handleFormInputChange }) => {
                 <fieldset className={styles.fieldset}>
                 
                     <label htmlFor="first_aroma">
-                        <input name="first" className={styles.input} type="text" onChange={handleFormInputChange}  placeholder="Coffee"></input>
+                        <input name="first_aroma" className={styles.input} type="text" onChange={handleSmellFormInputChange}  placeholder="Coffee"></input>
                     </label>
                     <label htmlFor="second_aroma">
-                        <input name="second" className={styles.input}  type="text" onChange={handleFormInputChange} placeholder="Scented Candle"></input>
+                        <input name="second_aroma" className={styles.input}  type="text" onChange={handleSmellFormInputChange} placeholder="Scented Candle"></input>
                     </label>
                     
                 </fieldset>
