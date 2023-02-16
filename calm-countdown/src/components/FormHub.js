@@ -85,6 +85,7 @@ const FormHub = ({}) => {
                     return;
                 } 
             }
+            console.log('hi')
             setBlankAlert('');
         }  else if (component === 3) {
             for (const input of Object.values(hearFormInput)) {
