@@ -34,7 +34,7 @@ const FormHub = ({}) => {
 
     const [hearFormInput, setHearFormInput] = useState({
         firstSound: '',
-        secoundSound: '',
+        secondSound: '',
         thirdSound: '',
     })
 
@@ -85,11 +85,11 @@ const FormHub = ({}) => {
                     return;
                 } 
             }
-            console.log('hi')
             setBlankAlert('');
-        }  else if (component === 3) {
+        } else if (component === 3) {
             for (const input of Object.values(hearFormInput)) {
                 if (input.trim().length === 0) {
+                    console.log(input)
                     setBlankAlert('Field(s) empty. Kindly fix.');
                     return;
                 } 
