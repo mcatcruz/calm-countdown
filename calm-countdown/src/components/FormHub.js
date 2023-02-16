@@ -51,7 +51,6 @@ const FormHub = ({}) => {
 
     // renderComponent will render a different component based on form value.
     const renderComponent = () => {
-
         const componentByNumericalOrder = {
             0: <HomeComponent />,
             1: <SeeForm seeFormInput={seeFormInput} handleSeeFormInputChange={handleSeeFormInputChange} />,
@@ -61,26 +60,58 @@ const FormHub = ({}) => {
             5: <TasteForm  tasteFormInput={tasteFormInput} handleTasteFormInputChange={handleTasteFormInputChange} />,
             6: <End />
         }
-
+    
         return componentByNumericalOrder[component];
     }
 
     // handleButton will increment setComponent by one; this is triggered when Next button is clicked.
     const handleButton= (event) => {
         // Check that formInput has zero blanks before incrementing component.
-        // if (component > 0 || component < 6) {
-        //     // in here is checking if any input field that is related to the current form is blank.
-        //     // if any of the input fields is blank, then add an alert and return early.
-        //     for (const input of Object.values(formInput)) {
-        //         if (input.trim().length === 0) {
-        //             setBlankAlert('Field(s) empty. Kindly fix.');
-        //             // return;
-        //         } 
-        //     }
+        if (component === 1) {
+            // in here is checking if any input field that is related to the current form is blank.
+            // if any of the input fields is blank, then add an alert and return early.
+            for (const input of Object.values(seeFormInput)) {
+                if (input.trim().length === 0) {
+                    setBlankAlert('Field(s) empty. Kindly fix.');
+                    return;
+                } 
+            }
+            // If all input fields are valid, then remove alert
+            setBlankAlert('');
+        } else if (component === 2) {
+            for (const input of Object.values(touchFormInput)) {
+                if (input.trim().length === 0) {
+                    setBlankAlert('Field(s) empty. Kindly fix.');
+                    return;
+                } 
+            }
+            setBlankAlert('');
+        }  else if (component === 3) {
+            for (const input of Object.values(hearFormInput)) {
+                if (input.trim().length === 0) {
+                    setBlankAlert('Field(s) empty. Kindly fix.');
+                    return;
+                } 
+            }
+            setBlankAlert('');
+        }  else if (component === 4) {
+            for (const input of Object.values(smellFormInput)) {
+                if (input.trim().length === 0) {
+                    setBlankAlert('Field(s) empty. Kindly fix.');
+                    return;
+                } 
+            }
+            setBlankAlert('');
+        }  else if (component === 5) {
+            for (const input of Object.values(tasteFormInput)) {
+                if (input.trim().length === 0) {
+                    setBlankAlert('Field empty. Kindly fix.');
+                    return;
+                } 
+            }
+            setBlankAlert('');
+        } 
 
-        //     // if all input fields are valid, then remove alert.
-        // }
-        
         if (component >= 6) {
             setComponent(0);
         } else {
