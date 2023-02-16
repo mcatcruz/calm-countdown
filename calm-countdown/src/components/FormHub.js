@@ -101,7 +101,7 @@ const FormHub = ({}) => {
             <div className={styles.container}>
                 {renderComponent()}
                 <span className={styles.span}>{blankAlert}</span>
-                <button className={styles.nextbtn} onClick={handleButton}> 
+                <button className={styles.nextbtn} onClick={handleButton} disabled={blankAlert}> 
                     { component === 0 ? "Start" 
                     : component >= 6 ? "Restart" 
                     : "Next" }
