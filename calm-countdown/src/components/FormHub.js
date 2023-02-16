@@ -68,18 +68,18 @@ const FormHub = ({}) => {
     // handleButton will increment setComponent by one; this is triggered when Next button is clicked.
     const handleButton= (event) => {
         // Check that formInput has zero blanks before incrementing component.
-        if (component > 0 || component < 6) {
-            // in here is checking if any input field that is related to the current form is blank.
-            // if any of the input fields is blank, then add an alert and return early.
-            for (const input of Object.values(formInput)) {
-                if (input.trim().length === 0) {
-                    setBlankAlert('Field(s) empty. Kindly fix.');
-                    // return;
-                } 
-            }
+        // if (component > 0 || component < 6) {
+        //     // in here is checking if any input field that is related to the current form is blank.
+        //     // if any of the input fields is blank, then add an alert and return early.
+        //     for (const input of Object.values(formInput)) {
+        //         if (input.trim().length === 0) {
+        //             setBlankAlert('Field(s) empty. Kindly fix.');
+        //             // return;
+        //         } 
+        //     }
 
-            // if all input fields are valid, then remove alert.
-        }
+        //     // if all input fields are valid, then remove alert.
+        // }
         
         if (component >= 6) {
             setComponent(0);
@@ -92,27 +92,27 @@ const FormHub = ({}) => {
     const handleSeeFormInputChange = (event) => {
         const target = event.target;
 
-        if (target.name == "first_seen_item") {
+        if (target.name == "first_see_item") {
             setSeeFormInput({
                 ...seeFormInput,
                 firstSeeItem: target.value
             })
-        } else if (target.name == "second_seen_item") {
+        } else if (target.name == "second_see_item") {
             setSeeFormInput({
                 ...seeFormInput,
                 secondSeeItem: target.value
             })
-        } else if (target.name == "third_seen_item") {
+        } else if (target.name == "third_see_item") {
             setSeeFormInput({
                 ...seeFormInput,
                 thirdSeeItem: target.value
             })
-        } else if (target.name == "fourth_seen_item") {
+        } else if (target.name == "fourth_see_item") {
             setSeeFormInput({
                 ...seeFormInput,
                 fourthSeeItem: target.value
             })
-        } else if (target.name == "fifth_seen_item") {
+        } else if (target.name == "fifth_see_item") {
             setSeeFormInput({
                 ...seeFormInput,
                 fifthSeeItem: target.value

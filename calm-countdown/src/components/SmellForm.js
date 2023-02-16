@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/HomeComponent.module.css";
 
-const SmellForm = ({ handleFormInputChange }) => {
+const SmellForm = ({ handleSmellFormInputChange }) => {
 
     return (
         <>

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/HomeComponent.module.css";
 
 
-const TasteForm = ({handleFormInputChange}) => {
+const TasteForm = ({handleTasteFormInputChange}) => {
 
     return (
         <>
