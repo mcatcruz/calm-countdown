@@ -12,7 +12,7 @@ import HomeComponent from "./HomeComponent";
 // This will handle most of the forms' logic.
 
 // 2/14 TODO: ADD A 'BACK' BUTTON
-// 2/15 TODO (FOR ALL FORMS): ERROR HANDLING
+
 
 const FormHub = ({}) => {
     const [component, setComponent] = useState(0);
