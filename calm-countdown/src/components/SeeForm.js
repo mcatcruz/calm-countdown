@@ -11,8 +11,7 @@ const SeeForm = ({ handleFormInputChange }) => {
                 <fieldset className={styles.fieldset}>
                 
                     <label htmlFor="first_seen_item">
-                        <input name="first" className={styles.input} type="text" onChange={handleFormInputChange}  placeholder="Desk"
-                        required>
+                        <input name="first" className={styles.input} type="text" onChange={handleFormInputChange} placeholder="Desk">
                         </input>
                     </label>
                     <label htmlFor="second_seen_item">

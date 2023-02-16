@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, {useState} from "react";
 import styles from "../styles/HomeComponent.module.css";
 import SeeForm from './SeeForm';
 import TouchForm from './TouchForm';
@@ -13,7 +13,6 @@ import HomeComponent from "./HomeComponent";
 
 // 2/14 TODO: ADD A 'BACK' BUTTON
 // 2/15 TODO (FOR ALL FORMS): ERROR HANDLING
-// 2/15 TODO: ALIGN BUTTON AND FORM. 
 
 const FormHub = ({}) => {
     const [component, setComponent] = useState(0);
@@ -26,14 +25,26 @@ const FormHub = ({}) => {
         fifthItem: '',
     })
 
+    const [blankAlert, setBlankAlert] = useState('');
+
+    const handleBlankItem = () => {
+        for (const input of Object.values(formInput)) {
+            if (input.trim().length > 0) {
+                setBlankAlert('');
+            } else {
+                setBlankAlert('Field(s) empty. Kindly fix.')
+            }
+        }
+    }
+
     // renderComponent will render a different component based on form value.
     const renderComponent = () => {
 
         const componentByNumericalOrder = {
             0: <HomeComponent />,
             1: <SeeForm formInput={formInput} handleFormInputChange={handleFormInputChange} />,
-            2: <TouchForm formInput={formInput} handleFormInputChange={handleFormInputChange}/>,
-            3: <HearForm  formInput={formInput} handleFormInputChange={handleFormInputChange}/>,
+            2: <TouchForm formInput={formInput} handleFormInputChange={handleFormInputChange} />,
+            3: <HearForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
             4: <SmellForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
             5: <TasteForm  formInput={formInput} handleFormInputChange={handleFormInputChange} />,
             6: <End />
@@ -42,19 +53,22 @@ const FormHub = ({}) => {
         return componentByNumericalOrder[component];
     }
 
-    // handleNext will increment setComponent by one; this is triggered when Next button is clicked.
-    const handleButtonText = (event) => {
+    // handleButton will increment setComponent by one; this is triggered when Next button is clicked.
+    const handleButton= (event) => {
         if (component >= 6) {
             setComponent(0);
         } else {
             setComponent(component + 1);
         }
-            
+        if (component !== 0 || component === 6) {
+            handleBlankItem();
+        }
+        
     }
 
     // handledFormInputChange updates the forms with user input
     const handleFormInputChange = (event) => {
-        const target = event.target
+        const target = event.target;
         if (target.name == "first") {
             setFormInput({
                 ...formInput,
@@ -82,12 +96,12 @@ const FormHub = ({}) => {
             })
         }
     }
-    console.log(component)
+
     return (
             <div className={styles.container}>
                 {renderComponent()}
-                
-                <button className={styles.nextbtn} onClick={handleButtonText}> 
+                <span className={styles.span}>{blankAlert}</span>
+                <button className={styles.nextbtn} onClick={handleButton}> 
                     { component === 0 ? "Start" 
                     : component >= 6 ? "Restart" 
                     : "Next" }

@@ -50,3 +50,10 @@
     padding: 0.2rem;
 
 }
+
+.span {
+    font-family:'Poppins', sans-serif;
+    font-size: 0.7rem;
+    color: rgb(225, 160, 129, 0.75);
+    padding-bottom: 1rem;
+}
