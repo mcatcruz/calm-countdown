@@ -9,7 +9,7 @@ import End from "./End";
 import HomeComponent from "./HomeComponent";
 
 // FormHub holds the initial state of all the forms through useState.
-// This will handle most of the forms' logic.
+
 
 // 2/14 TODO: ADD A 'BACK' BUTTON
 
@@ -65,18 +65,15 @@ const FormHub = ({}) => {
     }
 
     // handleButton will increment setComponent by one; this is triggered when Next button is clicked.
+    // It will also check for any blank input fields before incrementing component.
     const handleButton= (event) => {
-        // Check that formInput has zero blanks before incrementing component.
         if (component === 1) {
-            // in here is checking if any input field that is related to the current form is blank.
-            // if any of the input fields is blank, then add an alert and return early.
             for (const input of Object.values(seeFormInput)) {
                 if (input.trim().length === 0) {
                     setBlankAlert('Field(s) empty. Kindly fix.');
                     return;
                 } 
             }
-            // If all input fields are valid, then remove alert
             setBlankAlert('');
         } else if (component === 2) {
             for (const input of Object.values(touchFormInput)) {
